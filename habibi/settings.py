@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-34yzh**fr02yf8_4_ofn40yf=f^b3ux6q$q@fu0qk7fo4sdrh_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["81.95.232.205","shablon"] 
+ALLOWED_HOSTS = ["*"] 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Application definition
 
@@ -124,10 +124,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_DIRS = [
-    'habibi/static'
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') # BASE_DIR / 'static'
+ROOT_PATH = os.path.dirname(__file__)
+STATICFILES_DIRS = [os.path.join(ROOT_PATH, 'static')]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
